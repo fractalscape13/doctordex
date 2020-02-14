@@ -8,7 +8,13 @@ function showInfo(response) {
   $("#waiting").hide();
   $("#output").fadeIn();
   $("#results").text(response);
-  console.log(response);
+  console.log(typeof(response));
+}
+
+function showError() {
+  $("#waiting").hide();
+  $("#output").fadeIn();
+  $("#results").text("Something went wrong! We're sorry. Please try again.");
 }
 
 $(document).ready(function() {
@@ -36,6 +42,8 @@ $(document).ready(function() {
       if (response.length == 0) {
         $("#results").text("Your query returned no results, please try again");
         $("#output").fadeIn();
+      } else if (response == false) {
+        showError();
       } else {
         showInfo(response);
       }
