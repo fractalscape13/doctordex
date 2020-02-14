@@ -13,10 +13,14 @@ _This site will take user input for a doctor's name or medical condition and ret
 * _Setup assumes the use of Git and NPM
 * _Clone from https://github.com/fractalscape13/doctordex_
 * _Run 'npm install'_
+* _Get API key from https://developer.betterdoctor.com/_
+* _Store API key in .env file in main project directory_
 * _Run 'npm start' to view page in live server_
 * _Open files in text editor to view code_
 
 _All dependencies are listed in package.json_
+_API key must be stored in .env file in main directory and formatted as:_
+        _"API_KEY = 'unique key goes here'"_
 
 ## Specifications
 
@@ -50,7 +54,7 @@ _Contact me at fractalscape13@gmail.com with any comments or questions_
 
 ## Technologies Used
 
-_Javascript, JQuery, Node.js, NPM, Webpack, EsLint, Jest, Babel, CSS/Bootstrap_
+_Javascript, JQuery, Node.js, NPM, Webpack, EsLint, Jest, Babel, CSS/Bootstrap, Dotenv, Uglifyjs, BetterDoctor API_
 
 ### License
 

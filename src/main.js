@@ -57,6 +57,7 @@ $(document).ready(function() {
       }
     })();
   });
+  //click function for output list of doctor names to see full info
   $("ul#results").on("click", "li", function() {
     let currentDoc = $(this).attr("value");
     console.log(currentDoc);
