@@ -4,6 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { DoctorService } from './doctor-service';
 
+function showInfo(response) {
+  $("#output").fadeIn();
+  $("#results").text(response);
+}
+
 $(document).ready(function() {
   $("form").submit(function() {
     event.preventDefault();
@@ -13,17 +18,22 @@ $(document).ready(function() {
       let newQuery = new DoctorService();
       let response;
       if (name) {
+        $("#inputform").hide();
         response = await newQuery.getDoctorByName(name);
       } else if (condition) {
+        $("#inputform").hide();
         response = await newQuery.getDoctorByCondition(condition);
       } else {
         $("#emptyinput").fadeIn();
         setTimeout(function() {
           $("#emptyinput").fadeOut();
-        }, 3000);
+        }, 1500);
       }
       if (response.length == 0) {
-        $("#output").text("Your query returned no results, please try again");
+        $("#results").text("Your query returned no results, please try again");
+        $("#output").fadeIn();
+      } else {
+        showInfo(response);
       }
     })();
   });
