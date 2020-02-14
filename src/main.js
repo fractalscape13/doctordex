@@ -46,12 +46,12 @@ $(document).ready(function() {
         }, 1500);
       }
       //checks for a successful api call with no results
-      if (response.data.length == 0) {
+      if (response == false) {
+        showError();
+      } else if (response.data.length == 0) {
         $("#waiting").hide();
         $("#results").text("Your query returned no results, please try again");
         $("#output").fadeIn();
-      } else if (response == false) {
-        showError();
       } else {
         showInfo(response);
       }

@@ -17,10 +17,9 @@ _This site will take user input for a doctor's name or medical condition and ret
 * _Store API key in .env file in main project directory_
 * _Run 'npm start' to view page in live server_
 * _Open files in text editor to view code_
-
 * _All dependencies are listed in package.json_
 * _API key must be stored in .env file in main directory and formatted as:_
-        _API_KEY = 'unique key goes here'_
+    * _API_KEY = 'unique key goes here'_
 
 ## Specifications
 
