@@ -21,14 +21,23 @@ _All dependencies are listed in package.json_
 ## Specifications
 
 * _A user can enter a condition or doctor's name_
-    * _Example: Input: User types "arthritis"
-    * _Output: A list of doctors that treat arthritis is shown
+    * _Example: Input: User types "arthritis"_
+    * _Output: A list of doctors that treat arthritis is shown_
+* _If user submits a blank input, an error is returned_
+    * _Example: Input: User submits blank form_
+    * _Output: A warning is shown_
 * _A user can click on a doctor's name to see more info_
-    * _Example: Input: Click on name
-    * _Output: The doctor's name, address, phone number, etc is shown
+    * _Example: Input: Click on name_
+    * _Output: The doctor's name, address, phone number, etc is shown_
 * _A user can click a different doctor and see different info_
-    * _Example: Input: Click on new doctor's name
-    * _Output: Previous info hides, new info shows
+    * _Example: Input: Click on new doctor's name_
+    * _Output: Previous info hides, new info shows_
+* _If API call returns nothing, an error message is shown_
+    * _Example: Input: Valid form submission, no results_
+    * _Output: User is shown a message showing no results were returned_
+* _If API call is unsuccessful, an error message is shown_
+    * _Example: Input: Valid form submission, no results_
+    * _Output: User is shown a message showing something went wrong and prompting user to try again_
 
 
 ## Known Bugs
