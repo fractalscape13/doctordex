@@ -9,6 +9,7 @@ body {
   text-align: center;
   color: rgba(255, 255, 240, 0.637);
   margin-top: 25px;
+  background-repeat: no-repeat;
 }
 
 #output {
@@ -17,7 +18,7 @@ body {
 
 #waiting {
   display: none;
-
+  font-size: 600%;
 }
 
 #emptyinput {
@@ -58,4 +59,8 @@ button {
 button:hover {
   cursor: pointer;
   opacity: .7;
+}
+
+li {
+  list-style: none;
 }

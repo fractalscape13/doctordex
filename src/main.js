@@ -6,9 +6,12 @@ import { DoctorService } from './doctor-service';
 
 function showInfo(response) {
   $("#waiting").hide();
+  for (let i=0; i<response.data.length; i++) {
+    $("#results").append(`<li value="` + response.data[i].profile.last_name + `">` + response.data[i].profile.last_name + `</li>`);
+
+  }
   $("#output").fadeIn();
-  $("#results").text(response);
-  console.log(typeof(response));
+  console.log(response.data);
 }
 
 function showError() {
@@ -39,7 +42,8 @@ $(document).ready(function() {
           $("#emptyinput").fadeOut();
         }, 1500);
       }
-      if (response.length == 0) {
+      if (response.data.length == 0) {
+        $("#waiting").hide();
         $("#results").text("Your query returned no results, please try again");
         $("#output").fadeIn();
       } else if (response == false) {
