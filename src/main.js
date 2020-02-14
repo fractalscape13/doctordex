@@ -8,8 +8,7 @@ import { DoctorService } from './doctor-service';
 function showInfo(response) {
   $("#waiting").hide();
   for (let i=0; i<response.data.length; i++) {
-    $("#results").append(`<li value="` + response.data[i].profile.last_name + `">` + response.data[i].profile.last_name + `</li>`);
-
+    $("#results").append(`<li value="` + response.data[i].npi + `">` + response.data[i].profile.first_name + " " + response.data[i].profile.last_name + `</li>`);
   }
   $("#output").fadeIn();
   console.log(response.data);
@@ -20,6 +19,11 @@ function showError() {
   $("#waiting").hide();
   $("#output").fadeIn();
   $("#results").text("Something went wrong! We're sorry. Please try again.");
+}
+
+//displays additional info for each doctor
+function showDetail(response) {
+  console.log(response);
 }
 
 $(document).ready(function() {
@@ -59,7 +63,20 @@ $(document).ready(function() {
   });
   //click function for output list of doctor names to see full info
   $("ul#results").on("click", "li", function() {
-    let currentDoc = $(this).attr("value");
-    console.log(currentDoc);
+    let currentId = $(this).attr("value");
+    (async () => {
+      let newQuery = new DoctorService();
+      let response;
+      if (currentId) {
+        response = await newQuery.getDoctorById(currentId);
+      }
+      if (response == false) {
+        showError();
+      } else if (response.data.length == 0) {
+        $("#results").text("Your query returned no results, please try again");
+      } else {
+        showDetail(response);
+      }
+    })();
   });
 });

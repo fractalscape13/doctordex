@@ -28,4 +28,19 @@ export class DoctorService {
       return false;
     }
   }
+
+  async getDoctorById(id) {
+    try {
+      let response = await fetch(`https://api.betterdoctor.com/2016-03-01/doctors/npi/${id}?user_key=${process.env.API_KEY}`);
+      let jsonifiedResponse;
+      if (response.status == 200 && response.ok) {
+        jsonifiedResponse = await response.json();
+      } else {
+        jsonifiedResponse = false;
+      }
+      return jsonifiedResponse;
+    } catch(error) {
+      return false;
+    }
+  }
 }
