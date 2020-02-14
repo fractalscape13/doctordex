@@ -24,6 +24,8 @@ function showError() {
 //displays additional info for each doctor
 function showDetail(response) {
   console.log(response);
+  $("#details").text(response.data.profile.bio)
+  $("#details").fadeIn();
 }
 
 $(document).ready(function() {

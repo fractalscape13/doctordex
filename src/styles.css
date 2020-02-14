@@ -3,8 +3,8 @@ body, html {
 }
 
 body {
-  background-color: darkred;
-  background-image: linear-gradient(black, rgb(66, 11, 105), rgb(47, 161, 161), rgb(199, 146, 14), darkred);
+  background-color: black;
+  background-image: linear-gradient(black, rgb(66, 11, 105), rgb(47, 161, 161), rgb(199, 146, 14), darkred, black);
   font-family: courier;
   text-align: center;
   color: rgba(255, 255, 240, 0.637);
@@ -12,7 +12,7 @@ body {
   background-repeat: no-repeat;
 }
 
-#output {
+#output, #details {
   display: none;
 }
 
