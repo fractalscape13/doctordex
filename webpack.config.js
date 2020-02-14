@@ -18,9 +18,9 @@ module.exports = {
     new Dotenv(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: '',
+      title: 'doctordex',
       template: './src/index.html',
-      inject: 'head'
+      inject: 'body'
     })
   ],
   module: {
