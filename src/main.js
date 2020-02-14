@@ -5,19 +5,19 @@ import './styles.css';
 import { DoctorService } from './doctor-service';
 
 //displays list of doctors based on results from API call
-function showInfo(response) {
-  $("#waiting").hide();
+function showList(response) {
   for (let i=0; i<response.data.length; i++) {
     $("#results").append(`<li value="` + response.data[i].npi + `">` + response.data[i].profile.first_name + " " + response.data[i].profile.last_name + `</li>`);
   }
+  $("#waiting").hide();
   $("#output").fadeIn();
 }
 
 //displays error message if API call fails
 function showError() {
+  $("#results").text("Something went wrong! We're sorry. Please try again.");
   $("#waiting").hide();
   $("#output").fadeIn();
-  $("#results").text("Something went wrong! We're sorry. Please try again.");
 }
 
 //displays additional info for each doctor
@@ -73,7 +73,7 @@ $(document).ready(function() {
         $("#results").text("Your query returned no results, please try again");
         $("#output").fadeIn();
       } else {
-        showInfo(response);
+        showList(response);
       }
     })();
   });
