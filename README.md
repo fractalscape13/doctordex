@@ -20,18 +20,16 @@ _All dependencies are listed in package.json_
 
 ## Specifications
 
-* _This happens when a user does something_
-    * _Example: Input: Click
-    * _Output: Something shows
-* _This happens when a user does something_
-    * _Example: Input: Click
-    * _Output: Something shows
-* _This happens when a user does something_
-    * _Example: Input: Click
-    * _Output: Something shows
-* _This happens when a user does something_
-    * _Example: Input: Click
-    * _Output: Something shows
+* _A user can enter a condition or doctor's name_
+    * _Example: Input: User types "arthritis"
+    * _Output: A list of doctors that treat arthritis is shown
+* _A user can click on a doctor's name to see more info_
+    * _Example: Input: Click on name
+    * _Output: The doctor's name, address, phone number, etc is shown
+* _A user can click a different doctor and see different info_
+    * _Example: Input: Click on new doctor's name
+    * _Output: Previous info hides, new info shows
+
 
 ## Known Bugs
 
