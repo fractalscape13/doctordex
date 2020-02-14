@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { DoctorService } from './doctor-service';
 
+//displays list of doctors based on results from API call
 function showInfo(response) {
   $("#waiting").hide();
   for (let i=0; i<response.data.length; i++) {
@@ -14,6 +15,7 @@ function showInfo(response) {
   console.log(response.data);
 }
 
+//displays error message if API call fails
 function showError() {
   $("#waiting").hide();
   $("#output").fadeIn();
@@ -21,6 +23,7 @@ function showError() {
 }
 
 $(document).ready(function() {
+  //click function to submit search form
   $("form").submit(function() {
     event.preventDefault();
     let name = $("input#name").val();
@@ -42,6 +45,7 @@ $(document).ready(function() {
           $("#emptyinput").fadeOut();
         }, 1500);
       }
+      //checks for a successful api call with no results
       if (response.data.length == 0) {
         $("#waiting").hide();
         $("#results").text("Your query returned no results, please try again");
@@ -52,5 +56,9 @@ $(document).ready(function() {
         showInfo(response);
       }
     })();
+  });
+  $("ul#results").on("click", "li", function() {
+    let currentDoc = $(this).attr("value");
+    console.log(currentDoc);
   });
 });

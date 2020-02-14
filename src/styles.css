@@ -38,6 +38,7 @@ img {
   margin-right: 120px;
   padding: 25px;
   border-radius: 10px;
+  align-content: center;
 }
 
 input {
@@ -63,4 +64,13 @@ button:hover {
 
 li {
   list-style: none;
+  color: rgb(236, 236, 201);
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+ul {
+  padding-left: 0px;
 }
