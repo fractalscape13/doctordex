@@ -6,17 +6,17 @@
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This site will take user input for a doctor's name or medical condition and return matching doctors from the Portland area_
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Setup assumes the use of Git and NPM
+* _Clone from https://github.com/fractalscape13/doctordex_
+* _Run 'npm install'_
+* _Run 'npm start' to view page in live server_
+* _Open files in text editor to view code_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+_All dependencies are listed in package.json_
 
 ## Specifications
 
@@ -35,15 +35,15 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_No known bugs..._
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Contact me at fractalscape13@gmail.com with any comments or questions_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_Javascript, JQuery, Node.js, NPM, Webpack, EsLint, Jest, Babel, CSS/Bootstrap_
 
 ### License
 

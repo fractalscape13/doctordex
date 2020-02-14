@@ -5,5 +5,8 @@ import './styles.css';
 // import { DoctorService } from './doctor-service';
 
 $(document).ready(function() {
-  
+  $("form").submit(function() {
+    event.preventDefault();
+    
+  });
 });

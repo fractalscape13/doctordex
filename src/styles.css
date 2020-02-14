@@ -8,6 +8,7 @@ body {
   font-family: courier;
   text-align: center;
   color: rgba(255, 255, 240, 0.637);
+  margin-top: 25px;
 }
 
 .box {
@@ -16,6 +17,7 @@ body {
   margin-left: 120px;
   margin-right: 120px;
   padding: 25px;
+  border-radius: 10px;
 }
 
 button {
