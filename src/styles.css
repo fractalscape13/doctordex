@@ -15,6 +15,12 @@ body {
   display: none;
 }
 
+#emptyinput {
+  display: none;
+  color: rgb(175, 84, 84);
+  font-weight: bold;
+}
+
 img {
   max-width: 15%;
   margin: 15px;
