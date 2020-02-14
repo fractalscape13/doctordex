@@ -5,8 +5,10 @@ import './styles.css';
 import { DoctorService } from './doctor-service';
 
 function showInfo(response) {
+  $("#waiting").hide();
   $("#output").fadeIn();
   $("#results").text(response);
+  console.log(response);
 }
 
 $(document).ready(function() {
@@ -19,9 +21,11 @@ $(document).ready(function() {
       let response;
       if (name) {
         $("#inputform").hide();
+        $("#waiting").fadeIn();
         response = await newQuery.getDoctorByName(name);
       } else if (condition) {
         $("#inputform").hide();
+        $("#waiting").fadeIn();
         response = await newQuery.getDoctorByCondition(condition);
       } else {
         $("#emptyinput").fadeIn();

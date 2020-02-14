@@ -15,6 +15,11 @@ body {
   display: none;
 }
 
+#waiting {
+  display: none;
+
+}
+
 #emptyinput {
   display: none;
   color: rgb(175, 84, 84);
