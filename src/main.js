@@ -11,7 +11,6 @@ function showInfo(response) {
     $("#results").append(`<li value="` + response.data[i].npi + `">` + response.data[i].profile.first_name + " " + response.data[i].profile.last_name + `</li>`);
   }
   $("#output").fadeIn();
-  console.log(response.data);
 }
 
 //displays error message if API call fails
@@ -23,8 +22,25 @@ function showError() {
 
 //displays additional info for each doctor
 function showDetail(response) {
-  console.log(response);
-  $("#details").text(response.data.profile.bio)
+  console.log(response.data.practices[0].location_slug);
+  let index;
+  for (let i=0; i<response.data.practices.length; i++) {
+    if (response.data.practices[i].location_slug == "or-portland") {
+      index = i;
+      break
+    }
+  }
+  console.log(index);
+  $("#fullname").text(response.data.profile.first_name + " " + response.data.profile.last_name);
+  $("#address").text(response.data.practices[index].visit_address.street)
+  $("#citystate").text(response.data.practices[index].visit_address.city + ", " + response.data.practices[index].visit_address.state)
+  $("#phone").text(response.data.practices[index].phones[0].number)
+  if (response.data.practices[index].accepts_new_patients == true) {
+    $("#accepting").text("Yes!");
+  } else {
+    $("#accepting").text("Not at this time");    
+  }
+  $("#bio").text(response.data.profile.bio);
   $("#details").fadeIn();
 }
 

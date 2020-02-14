@@ -1,18 +1,19 @@
 body, html {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
   background-color: black;
-  background-image: linear-gradient(black, rgb(66, 11, 105), rgb(47, 161, 161), rgb(199, 146, 14), darkred, black);
+  background-image: linear-gradient(black, rgb(66, 11, 105), rgb(30, 99, 99), rgb(150, 111, 12), rgb(92, 1, 1), black);
   font-family: courier;
   text-align: center;
   color: rgba(255, 255, 240, 0.637);
   margin-top: 25px;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
-#output, #details {
+#output {
   display: none;
 }
 
@@ -39,6 +40,13 @@ img {
   padding: 25px;
   border-radius: 10px;
   align-content: center;
+}
+
+#details {
+  display: none;
+  font-size: 80%;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 input {
