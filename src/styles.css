@@ -11,6 +11,10 @@ body {
   margin-top: 25px;
 }
 
+#output {
+  display: none;
+}
+
 img {
   max-width: 15%;
   margin: 15px;
@@ -23,6 +27,14 @@ img {
   margin-right: 120px;
   padding: 25px;
   border-radius: 10px;
+}
+
+input {
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: ivory;
+  text-align: center;
 }
 
 button {
