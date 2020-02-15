@@ -34,22 +34,40 @@ function showDetail(response) {
   $("#citystate").text(response.data.practices[index].visit_address.city + ", " + response.data.practices[index].visit_address.state)
   $("#phone").text(response.data.practices[index].phones[0].number)
   if (response.data.practices[index].accepts_new_patients == true) {
-    $("#accepting").text("Yes!");
+    $("#accepting").text("Accepting new patients");
   } else {
-    $("#accepting").text("Not at this time");    
+    $("#accepting").text("Not accepting new patients at this time");    
   }
   $("#bio").text(response.data.profile.bio);
   $("#details").fadeIn();
 }
 
 $(document).ready(function() {
+  const newQuery = new DoctorService();
+  //click to show list of all conditions
+  $("#conditionsbtn").click(function() {
+    (async () => {
+      let response = await newQuery.getConditions();
+      if (response == false) {
+        showError();
+      } else if (response.data.length == 0) {
+        $("#results").text("Your query returned no results, please try again");
+        $("#output").fadeIn();
+      } else {
+        console.log(response.data);
+        for (let i=0; i<response.data.length; i++) {
+          $("#conditionslist").append(response.data[i].name + ", ");
+        }
+      }
+      
+    })();
+  })
   //click function to submit search form
   $("form").submit(function() {
     event.preventDefault();
     let name = $("input#name").val();
     let condition = $("input#condition").val();
     (async () => {
-      let newQuery = new DoctorService();
       let response;
       if (name) {
         $("#inputform").hide();
@@ -81,7 +99,6 @@ $(document).ready(function() {
   $("ul#results").on("click", "li", function() {
     let currentId = $(this).attr("value");
     (async () => {
-      let newQuery = new DoctorService();
       let response;
       if (currentId) {
         response = await newQuery.getDoctorById(currentId);
