@@ -60,7 +60,7 @@ input {
 button {
   border: 3px solid black;
   border-radius: 15px;
-  background-image: radial-gradient(ivory, red);
+  background-image: radial-gradient(ivory, rgb(116, 1, 1));
   margin: 25px;
   font-size: 140%;
 }
@@ -82,4 +82,15 @@ li:hover {
 
 ul {
   padding-left: 0px;
+}
+
+#conditionslist {
+  margin-top: 80px;
+  font-size: 85%;
+}
+
+#conditionsbtn {
+  margin-top: 0px;
+  font-size: 85%;
+  background-image: radial-gradient(rgba(255, 255, 240, 0.336), rgb(75, 1, 1));
 }

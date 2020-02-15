@@ -31,8 +31,8 @@ function showDetail(response) {
   }
   $("#fullname").text(response.data.profile.first_name + " " + response.data.profile.last_name);
   $("#address").text(response.data.practices[index].visit_address.street)
-  $("#citystate").text(response.data.practices[index].visit_address.city + ", " + response.data.practices[index].visit_address.state)
-  $("#phone").text(response.data.practices[index].phones[0].number)
+  $("#citystate").text(response.data.practices[index].visit_address.city + ", " + response.data.practices[index].visit_address.state);
+  $("#phone").text(response.data.practices[index].phones[0].number);
   if (response.data.practices[index].accepts_new_patients == true) {
     $("#accepting").text("Accepting new patients");
   } else {
@@ -54,14 +54,13 @@ $(document).ready(function() {
         $("#results").text("Your query returned no results, please try again");
         $("#output").fadeIn();
       } else {
-        console.log(response.data);
+        $("#conditionsearch").hide();
         for (let i=0; i<response.data.length; i++) {
           $("#conditionslist").append(response.data[i].name + ", ");
         }
       }
-      
     })();
-  })
+  });
   //click function to submit search form
   $("form").submit(function() {
     event.preventDefault();
@@ -95,7 +94,7 @@ $(document).ready(function() {
       }
     })();
   });
-  //click function for output list of doctor names to see full info
+  //click function for output list of doctor names to see details
   $("ul#results").on("click", "li", function() {
     let currentId = $(this).attr("value");
     (async () => {
@@ -106,7 +105,8 @@ $(document).ready(function() {
       if (response == false) {
         showError();
       } else if (response.data.length == 0) {
-        $("#results").text("Your query returned no results, please try again");
+        $("#details").text("Your query returned no results, please try again");
+        $("#details").fadeIn();
       } else {
         showDetail(response);
       }
