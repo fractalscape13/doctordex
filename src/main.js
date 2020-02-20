@@ -15,7 +15,7 @@ function showList(response) {
 
 //displays error message if API call fails
 function showError() {
-  $("#results").text("Something went wrong! We're sorry. Please try again.");
+  $("#results").text("Something went wrong with your search! We're sorry. Please try again.");
   $("#waiting").hide();
   $("#output").fadeIn();
 }
@@ -37,6 +37,11 @@ function showDetail(response) {
     $("#accepting").text("Accepting new patients");
   } else {
     $("#accepting").text("Not accepting new patients at this time");    
+  }
+  if (response.data.practices[index].website == true) {
+    $("#website").text(response.data.practices[index].website);
+  } else {
+    $("#website").text("None found");
   }
   $("#bio").text(response.data.profile.bio);
   $("#details").fadeIn();
@@ -109,6 +114,7 @@ $(document).ready(function() {
         $("#details").fadeIn();
       } else {
         showDetail(response);
+        console.log(response.data.practices);
       }
     })();
   });
