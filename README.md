@@ -53,7 +53,7 @@ _Contact me at fractalscape13@gmail.com with any comments or questions_
 
 ## Technologies Used
 
-_Javascript, JQuery, Node.js, NPM, Webpack, EsLint, Jest, Babel, CSS/Bootstrap, Dotenv, Uglifyjs, BetterDoctor API_
+_Javascript, JQuery, NPM, Webpack, EsLint, Jest, Babel, CSS/Bootstrap, Dotenv, Uglifyjs, BetterDoctor API_
 
 ### License
 
