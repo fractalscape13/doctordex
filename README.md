@@ -1,6 +1,6 @@
 # _DoctorDex_
 
-#### _A 'rolodex' for finding doctors, 2/14/2020_
+#### _A 'rolodex' for finding doctors in the Portland, OR area, 2/14/2020_
 
 #### By _**Joseph Wangemann**_
 
@@ -49,7 +49,7 @@ _No known bugs..._
 
 ## Support and contact details
 
-_Contact me at fractalscape13@gmail.com with any comments or questions_
+_Contact me by submitting a pull request on this repo with any comments or questions_
 
 ## Technologies Used
 
